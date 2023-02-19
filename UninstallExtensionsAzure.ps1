@@ -25,7 +25,7 @@ foreach($vm in $listOfVms){
     $VMinfo = get-azvm -Name $vmname
     $RG = $vm.RG
     $sub = get-Sub($vm.Sub)
-    }
+    
     Set-AzContext -SubscriptionId $sub -TenantId "$TenantID"
 
     Write-Warning "removing $extensionName from $vmname"
