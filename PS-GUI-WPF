@@ -1,0 +1,33 @@
+$xamlFile="C:\Scripts\WPF-GUI\MainWindow-TESTform.xaml"
+
+$inputXAML=Get-Content -Path $xamlFile -Raw
+$inputXAML=$inputXAML -replace 'mc:Ignorable="d"','' -replace "x:N","N" -replace '^[Less Than A Symbol]Win.*','[Less Than A Symbol]Window'
+[XML]$XAML=$inputXAML
+
+
+$reader = New-object System.xml.xmlnodereader $XAML
+
+try {
+    $psform=[windows.markup.XamlReader]::Load($reader)
+}
+catch {
+    Write-Host $_.exception
+    throw
+}
+
+$Xaml.SelectNodes("//*[@Name]") | Foreach-object {
+    try{
+        Set-Variable -Name "var_$($_.Name)" -Value $psform.FindName($_.Name) -ErrorAction Stop
+    }
+    catch{
+        throw
+    }
+}
+
+$var_SingleUserCreationButton.Add_Click({
+    
+    $var_ResultBox.Text = "TestWords"
+    
+})
+
+$psform.showdialog()
