@@ -1,10 +1,10 @@
 Select-AzSubscription -SubscriptionId "e80d8d01-6c1c-4b19-aaa7-ad83deec8bdf" -Tenant "9717d0e2-1404-4ee3-b021-42b15582c6ae"
 
-$VMname = "UpgradeOS-VM-Seifu"
+$VMname = ""
 
-$newVmname = "New-test-Seifu"
-$UserName='etsadmin'
-$Password='ITteampl@yer1239781'| ConvertTo-SecureString -Force -AsPlainText
+$newVmname = ""
+$UserName=''
+$Password=''| ConvertTo-SecureString -Force -AsPlainText
 $Credential=New-Object PSCredential($UserName,$Password)
 
 $VM = Get-AzVM -Name $VMname
