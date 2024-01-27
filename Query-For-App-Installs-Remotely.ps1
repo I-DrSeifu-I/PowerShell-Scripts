@@ -1,6 +1,6 @@
 
 #OU path to be users for the query
-$OUpath = 'OU=All Servers,DC=howardu,DC=net'
+$OUpath = ''
 $application = "--application youre looking for on servers--"
 #gathers the servers 
 $ListOfServers = Get-ADComputer -Filter * -SearchBase $OUpath|Where-Object { ($_.DistinguishedName -notlike "*Retired*")} | select name
