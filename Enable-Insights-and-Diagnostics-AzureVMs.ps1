@@ -4,14 +4,14 @@ Import-Module AzureRM.OperationalInsights
 
 
 #connect-azaccount
-$DiagnosticsLogging = "C:\Users\seifu\OneDrive\Documents\Azure Query\AzureDiagnostics.csv"
-Set-AzContext -Subscription "c99494c5-e512-41dc-9197-e8255578cb6b" -Tenant "02ac0c07-b75f-46bf-9b13-3630ba94bb69"
+$DiagnosticsLogging = "C:\AzureDiagnostics.csv"
+Set-AzContext -Subscription "" -Tenant ""
 
 
 
 $names = (Get-AzVM -Name "AZ-ORCH-P01").Name
 $nameOfStorageAccount = "howardedudiagnostics"
-$diagConfigxml = "C:\Users\seifu\OneDrive\Documents\Azure Query\WadConfig.json"
+$diagConfigxml = "C:\WadConfig.json"
 
 
 $workspaceName = "AZ-HUSentinel-Workspace"
