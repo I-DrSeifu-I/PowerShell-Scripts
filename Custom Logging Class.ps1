@@ -1,3 +1,4 @@
+#class for logging
 class Logging {
 
     [string]$Private:message
@@ -72,8 +73,10 @@ class Logging {
     }
 }
 
+#Creating class object
 $logExample = [logging]::new("starting script", ".\Newtext.txt", "info")
 
+#Logging using object
 $logExample.SetMessage("Logged Successfully again!"), $logExample.SetStatus("Success")
 $logExample.OutputLog()
 
