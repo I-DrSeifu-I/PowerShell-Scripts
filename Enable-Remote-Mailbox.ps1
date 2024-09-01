@@ -7,9 +7,9 @@ Function EnableRemoteMailbox {
 
 try {
 
-    $RemoteRoutingAddress = "$($samaccountname)@howardu.mail.onmicrosoft.com"
+    $RemoteRoutingAddress = "$($samaccountname)@<ADDRESS>"
 
-    $Session = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri "http://$($exchangeServer).howardu.net/PowerShell/"
+    $Session = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri "http://$($exchangeServer).<DOMAIN>/PowerShell/"
 
     Import-PSSession $Session -DisableNameChecking 
 
