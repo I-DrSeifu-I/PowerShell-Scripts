@@ -1,10 +1,10 @@
 Import-Module -Name ActiveDirectory
 
 #logf file patch
-$logPath = "C:\$(get-date -Format "yyMMdd")PHINetComputerGroupMemCheck.txt"
+$logPath = "C:\$(get-date -Format "yyMMdd")ComputerGroupMemCheck.txt"
 
 #List of computers
-$Computers = Import-Csv "C:\Users\a_mseifu\Documents\CoD-Computers-JAN010522.csv" -Header "name"
+$Computers = Import-Csv "C:\Computers.csv" -Header "name"
 
 #Loop through all computers in the list to see if they are part of the specified group
 foreach($Computer in $Computers){
