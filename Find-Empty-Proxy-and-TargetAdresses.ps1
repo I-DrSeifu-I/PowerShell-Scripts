@@ -1,5 +1,5 @@
 
-$searchbase = "OU=Visitors,OU=All Users,DC=howardu,DC=net"
+$searchbase = "<OU TO QUERY UNDER>"
 $users = Get-ADUser -Filter {(-not(targetAddress -like "*")) -or (-not(proxyAddresses -like "*")) -or (enabled -eq $true)} -SearchBase $searchbase -Properties proxyAddresses, targetaddress, name, samaccountname  | select proxyAddresses, targetaddress, name, samaccountname  
 
 $OU = "Visitors"
