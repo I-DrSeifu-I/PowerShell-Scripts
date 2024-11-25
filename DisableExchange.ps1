@@ -1,7 +1,7 @@
-﻿$users = Get-AzureADUser -ObjectId "eric.green@bison.howard.edu"
+﻿$users = Get-AzureADUser -ObjectId ""
 $SKUs = Get-AzureADSubscribedSku
 
-$plansToDisable = @("efb87545-963c-4e0d-99df-69c6916d9eb0","EXCHANGE_S_ENTERPRISE")
+$plansToDisable = @("PLAN ID","PLAN NAME")
 
 foreach ($user in $users) {
     $userLicenses = New-Object -TypeName Microsoft.Open.AzureAD.Model.AssignedLicenses
