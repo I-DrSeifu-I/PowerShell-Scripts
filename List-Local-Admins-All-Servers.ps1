@@ -1,8 +1,8 @@
 $svrObjs = @()
 
-$OUpath = 'OU=All Servers,DC=howardu,DC=net'
+$OUpath = 'DOMAIN OU'
 
-$ExportPath = 'C:\Users\d_vhoang\Desktop\localAdminMembers.csv'
+$ExportPath = 'C:\temp\localAdminMembers.csv'
 
 $servers = Get-ADComputer -Filter * -SearchBase $OUpath|Where-Object { ($_.DistinguishedName -notlike "*Retired*")} | Select-object DistinguishedName,DNSHostName,Name
 
