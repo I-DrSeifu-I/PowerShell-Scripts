@@ -3,7 +3,6 @@
 $OUpath = '--OU PATH---'
 
 #gathers the servers 
-#$ListOfServers = Get-ADComputer -Filter {operatingSystem -like "*2012*"} -SearchBase $OUpath | Where-Object { ($_.DistinguishedName -notlike "*Retired*") } | select name
 $ListOfServers = Get-Content -Path "C:\Logging\2012-check-log\2012serverlist.txt"
 $logPS = "C:\Logging\2012-check-log\Logs-2012-PS-Check.csv"
 
