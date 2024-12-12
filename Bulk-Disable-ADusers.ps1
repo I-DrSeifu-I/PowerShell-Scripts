@@ -1,5 +1,5 @@
 
-$users = Get-Content -Path "C:\Export\Disable-Graduate\Users.txt"
+$users = Get-Content -Path "C:\Export\Users.txt"
 $phase = "4"
 
 $loggingDescription = "Disabled-Users"
